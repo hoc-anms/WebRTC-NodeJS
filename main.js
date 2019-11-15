@@ -2,25 +2,6 @@ const socket = io( "https://webrtc-anms.herokuapp.com/" );
 
 $( "#div-chat" ).hide();
 
-let customConfig;
-
-$.ajax( {
-  url: "https://service.xirsys.com/ice",
-  data: {
-    ident: "hoc-anms",
-    secret: "48eb7b76-0750-11ea-9f74-0242ac110007",
-    domain: "https://hoc-anms.github.io/WebRTC-NodeJS/",
-    application: "default",
-    room: "default",
-    secure: 1
-  },
-  success: ( data, status ) => {
-    customConfig = data.d;
-    console.log( customConfig );
-  },
-  async: false
-} );
-
 socket.on( "LIST_USER", listUser => {
   $( "#div-chat" ).show();
   $( "#div-sign-up" ).hide();
@@ -57,12 +38,7 @@ const playStream = ( idVideoTag, stream ) => {
 // openStream()
 //   .then( stream => playStream ( "localStream", stream )  );
 
-const peer = new Peer( { 
-  "key": "peerjs", 
-  "host": "https://peer-hocanms.herokuapp.com/", 
-  "secure": true, 
-  "port": 443
- } );
+const peer = new Peer( { "key": "peerjs", "host": "https://peer-hocanms.herokuapp.com/", "secure": true, "port": 443 } );
 
 peer.on( "open", id => {
   $( "#my-peer" ).append( id )
