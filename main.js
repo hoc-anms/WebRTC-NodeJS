@@ -9,6 +9,7 @@ $.ajax( {
   data: {
     ident: "hoc-anms",
     secret: "48eb7b76-0750-11ea-9f74-0242ac110007",
+    domain: "https://hoc-anms.github.io/WebRTC-NodeJS/",
     application: "default",
     room: "default",
     secure: 1
