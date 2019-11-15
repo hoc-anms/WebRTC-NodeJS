@@ -1,4 +1,4 @@
-const socket = io( "http://localhost:4000" );
+const socket = io( "https://webrtc-anms.herokuapp.com/" );
 
 $( "#div-chat" ).hide();
 

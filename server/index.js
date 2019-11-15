@@ -1,5 +1,5 @@
 // note, io(<port>) will create a http server for you
-const io = require('socket.io')(4000);
+const io = require('socket.io')(process.env.PORT || 3000);
 
 const arrUserInfo = [];
 
